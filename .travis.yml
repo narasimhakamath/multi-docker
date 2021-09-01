@@ -13,10 +13,8 @@ after_success:
   - docker build -t narasimhakamath/multi-nginx ./nginx
   - docker build -t narasimhakamath/multi-server ./server
   - docker build -t narasimhakamath/multi-worker ./worker
-
   # Login to Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
   # Take the images to push to Docker Hub
   - docker push narasimhakamath/multi-client
   - docker push narasimhakamath/multi-nginx
